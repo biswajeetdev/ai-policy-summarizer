@@ -1,5 +1,10 @@
 # AI Policy Summarizer
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq-F55036?style=flat&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+
 Turn dense policy PDFs into structured plain-language summaries in seconds.
 
 Built with **Groq** (free LLM API) + **Streamlit**. No OpenAI key required.
