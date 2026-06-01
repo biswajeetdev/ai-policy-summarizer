@@ -150,19 +150,22 @@ with col_run:
 
 if st.button(run_label, type="primary", use_container_width=True):
     with st.spinner("Analysing..."):
-        if st.session_state.mode == "summarize":
-            result = summarise(
-                st.session_state.docs[doc_name],
-                st.session_state.client,
-                st.session_state.provider,
-            )
-        else:
-            result = compare(
-                st.session_state.docs,
-                st.session_state.client,
-                st.session_state.provider,
-            )
-    st.session_state.result = result
+        try:
+            if st.session_state.mode == "summarize":
+                result = summarise(
+                    st.session_state.docs[doc_name],
+                    st.session_state.client,
+                    st.session_state.provider,
+                )
+            else:
+                result = compare(
+                    st.session_state.docs,
+                    st.session_state.client,
+                    st.session_state.provider,
+                )
+            st.session_state.result = result
+        except RuntimeError as e:
+            st.error(str(e))
 
 if st.session_state.result:
     st.divider()
