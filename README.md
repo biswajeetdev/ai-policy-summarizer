@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
 ![Groq](https://img.shields.io/badge/Groq-F55036?style=flat&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![LLM](https://img.shields.io/badge/LLM-llama--3.3--70b-blueviolet?style=flat)
 
 Turn dense policy PDFs into structured plain-language summaries in seconds.
 
@@ -11,9 +11,9 @@ Built with **Groq** (free LLM API) + **Streamlit**. No OpenAI key required.
 
 ## What it does
 
-- **Summarize** — extracts key points, required actions, affected roles, deadlines, and defines jargon
-- **Compare** — side-by-side diff of two or more policy documents, highlighting conflicts and differences
-- **Download** — export any summary as Markdown
+- **Summarize mode** — extracts key points, required actions, affected roles, deadlines, and a jargon glossary
+- **Compare mode** — diffs two policy documents side by side, highlights what changed and which is more restrictive
+- **Download** — export any result as a Markdown file
 
 ## Setup
 
@@ -27,16 +27,16 @@ Get a free Groq API key (no credit card) at [console.groq.com/keys](https://cons
 
 ## Tech stack
 
-| Layer | Choice | Why |
-|---|---|---|
-| LLM | Groq / Llama 3.3 70B | Free tier, 14,400 req/day, fast inference |
-| UI | Streamlit | Rapid prototyping, PDF upload built-in |
-| PDF parsing | pypdf | Pure Python, no system deps |
-| Alt provider | OpenAI (optional) | Switchable via sidebar dropdown |
+| Layer | Technology |
+|-------|-----------|
+| UI | Streamlit |
+| LLM | Groq — `llama-3.3-70b-versatile` (free tier) |
+| PDF parsing | pypdf |
+| Alt provider | OpenAI-compatible (swap key + model) |
 
 ## Use cases
 
-- HR teams reviewing updated employment policies
-- Legal and compliance teams comparing contract versions
-- Students and researchers digesting academic regulations
-- Ops teams translating vendor SLAs into action items
+- HR teams reviewing benefits policy changes
+- Legal reviewing contract terms
+- Students parsing dense academic regulations
+- Anyone who needs to understand a document fast
